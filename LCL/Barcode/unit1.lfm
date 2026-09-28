@@ -1,0 +1,120 @@
+object Form1: TForm1
+  Left = 555
+  Height = 422
+  Top = 630
+  Width = 688
+  Caption = 'TMS FNC WX Barcode Demo'
+  ClientHeight = 422
+  ClientWidth = 688
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object TMSFNCWXBarcode1: TTMSFNCWXBarcode
+    Left = 24
+    Height = 375
+    Top = 24
+    Width = 375
+    DoubleBuffered = True
+    TabOrder = 0
+    Text = 'helloworld'
+  end
+  object TMSFNCWXQRCode1: TTMSFNCWXQRCode
+    Left = 24
+    Height = 375
+    Top = 24
+    Width = 375
+    DoubleBuffered = True
+    TabOrder = 1
+    Text = 'helloworld'
+    Settings.AutoColorDarkAlpha = 0.600000023841858
+    Settings.AutoColorLightAlpha = 0.699999988079071
+  end
+  object Label1: TLabel
+    Left = 424
+    Height = 25
+    Top = 24
+    Width = 115
+    Caption = 'Text to encode'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 424
+    Height = 25
+    Top = 112
+    Width = 104
+    Caption = 'Barcode type'
+    ParentColor = False
+  end
+  object Edit1: TEdit
+    Left = 424
+    Height = 33
+    Top = 56
+    Width = 240
+    OnChange = Edit1Change
+    TabOrder = 2
+    Text = 'helloworld'
+  end
+  object RadioButton1: TRadioButton
+    Tag = 100
+    Left = 424
+    Height = 29
+    Top = 144
+    Width = 55
+    Caption = 'QR'
+    Checked = True
+    OnClick = RadioButton1Click
+    TabOrder = 8
+    TabStop = True
+  end
+  object RadioButton2: TRadioButton
+    Tag = 101
+    Left = 424
+    Height = 29
+    Top = 176
+    Width = 107
+    Caption = 'Code 218'
+    OnClick = RadioButton1Click
+    TabOrder = 3
+  end
+  object RadioButton3: TRadioButton
+    Tag = 102
+    Left = 424
+    Height = 29
+    Top = 208
+    Width = 175
+    Caption = 'Code 39 Extended'
+    OnClick = RadioButton1Click
+    TabOrder = 4
+  end
+  object RadioButton4: TRadioButton
+    Tag = 103
+    Left = 424
+    Height = 29
+    Top = 240
+    Width = 175
+    Caption = 'Code 93 Extended'
+    OnClick = RadioButton1Click
+    TabOrder = 5
+  end
+  object RadioButton5: TRadioButton
+    Tag = 104
+    Left = 424
+    Height = 29
+    Top = 272
+    Width = 91
+    Caption = 'Telepen'
+    OnClick = RadioButton1Click
+    TabOrder = 6
+  end
+  object RadioButton6: TRadioButton
+    Tag = 105
+    Left = 424
+    Height = 29
+    Top = 304
+    Width = 92
+    Caption = 'PDF417'
+    OnClick = RadioButton1Click
+    TabOrder = 7
+  end
+end

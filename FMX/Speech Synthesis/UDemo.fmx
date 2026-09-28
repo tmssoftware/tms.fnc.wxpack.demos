@@ -1,0 +1,179 @@
+object Demo: TDemo
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX SpeechSynthesis Demo'
+  ClientHeight = 402
+  ClientWidth = 519
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'Did you know that the speech synthesis component can speak in di' +
+        'fferent languages and voice types? Click on configure voice to f' +
+        'ind out more.')
+    TextSettings.WordWrap = True
+    Align = Client
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Margins.Bottom = 5.000000000000000000
+    Size.Width = 509.000000000000000000
+    Size.Height = 320.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 505.000000000000000000
+    Viewport.Height = 316.000000000000000000
+  end
+  object TMSFNCWXSpeechSynthesis1: TTMSFNCWXSpeechSynthesis
+    Position.Y = 304.000000000000000000
+    Size.Width = 26.000000000000000000
+    Size.Height = 26.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Pitch = 1.000000000000000000
+    Rate = 1.000000000000000000
+    Volume = 1.000000000000000000
+    OnStart = TMSFNCWXSpeechSynthesis1Start
+    OnPause = TMSFNCWXSpeechSynthesis1Pause
+    OnResume = TMSFNCWXSpeechSynthesis1Resume
+    OnEnd = TMSFNCWXSpeechSynthesis1End
+  end
+  object StatusBar1: TStatusBar
+    Position.Y = 380.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 519.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object Label1: TLabel
+      Align = Center
+      TextSettings.HorzAlign = Center
+      TabOrder = 1
+    end
+  end
+  object GridPanelLayout1: TGridPanelLayout
+    Align = Bottom
+    Position.Y = 330.000000000000000000
+    Size.Width = 519.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    ColumnCollection = <
+      item
+        Value = 20.026410295188130000
+      end
+      item
+        Value = 20.002024352736040000
+      end
+      item
+        Value = 19.989666728220780000
+      end
+      item
+        Value = 19.988025983655980000
+      end
+      item
+        Value = 19.993872640199070000
+      end>
+    ControlCollection = <
+      item
+        Column = 0
+        Control = Speak
+        Row = 0
+      end
+      item
+        Column = 1
+        Control = pause
+        Row = 0
+      end
+      item
+        Column = 2
+        Control = resume
+        Row = 0
+      end
+      item
+        Column = 3
+        Control = Cancel
+        Row = 0
+      end
+      item
+        Column = 4
+        Control = Configure
+        Row = 0
+      end>
+    RowCollection = <
+      item
+        Value = 100.000000000000000000
+      end>
+    object Speak: TButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 93.937072753906250000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Speak'
+      OnClick = SpeakClick
+    end
+    object pause: TButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 93.810516357421880000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Pause'
+      OnClick = pauseClick
+    end
+    object resume: TButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 93.746368408203120000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Resume'
+      OnClick = resumeClick
+    end
+    object Cancel: TButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 93.737854003906250000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Cancel'
+      OnClick = CancelClick
+    end
+    object Configure: TButton
+      Align = Client
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Size.Width = 93.768188476562500000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      Text = 'Configure Voice'
+      OnClick = ConfigureClick
+    end
+  end
+end

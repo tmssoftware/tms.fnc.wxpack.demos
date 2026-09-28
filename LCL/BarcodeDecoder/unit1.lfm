@@ -1,0 +1,152 @@
+object Form1: TForm1
+  Left = 383
+  Height = 805
+  Top = 286
+  Width = 771
+  Caption = 'TMS FNC WX Barcode Decoder Demo'
+  ClientHeight = 805
+  ClientWidth = 771
+  DesignTimePPI = 144
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object TMSFNCWXCamera1: TTMSFNCWXCamera
+    Left = 8
+    Height = 525
+    Top = 8
+    Width = 750
+    DoubleBuffered = True
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Left = 8
+    Height = 240
+    Top = 552
+    Width = 750
+    ClientHeight = 240
+    ClientWidth = 750
+    TabOrder = 1
+    object Label2: TLabel
+      Left = 16
+      Height = 28
+      Top = 0
+      Width = 115
+      Caption = 'Barcode type'
+      Font.Height = -20
+      ParentColor = False
+      ParentFont = False
+    end
+    object qrRBtn: TRadioButton
+      Tag = 100
+      Left = 16
+      Height = 29
+      Top = 32
+      Width = 55
+      Caption = 'QR'
+      Checked = True
+      OnClick = qrRBtnClick
+      TabOrder = 0
+      TabStop = True
+    end
+    object code128RBtn: TRadioButton
+      Tag = 101
+      Left = 192
+      Height = 29
+      Top = 32
+      Width = 107
+      Caption = 'Code 218'
+      OnClick = qrRBtnClick
+      TabOrder = 1
+    end
+    object upcRBtn: TRadioButton
+      Tag = 102
+      Left = 16
+      Height = 29
+      Top = 64
+      Width = 82
+      Caption = 'UPC-A'
+      OnClick = qrRBtnClick
+      TabOrder = 2
+    end
+    object eanRBtn: TRadioButton
+      Tag = 103
+      Left = 192
+      Height = 29
+      Top = 64
+      Width = 91
+      Caption = 'EAN-13'
+      OnClick = qrRBtnClick
+      TabOrder = 3
+    end
+    object codaRBtn: TRadioButton
+      Tag = 104
+      Left = 16
+      Height = 29
+      Top = 96
+      Width = 98
+      Caption = 'Codabar'
+      OnClick = qrRBtnClick
+      TabOrder = 4
+    end
+    object decodeCamBtn: TButton
+      Left = 16
+      Height = 38
+      Top = 136
+      Width = 366
+      Caption = 'Decode from camera'
+      OnClick = decodeCamBtnClick
+      TabOrder = 5
+    end
+    object decodeImgBtn: TButton
+      Left = 16
+      Height = 38
+      Top = 184
+      Width = 366
+      Caption = 'Decode from image'
+      OnClick = decodeImgBtnClick
+      TabOrder = 6
+    end
+    object Label1: TLabel
+      Left = 416
+      Height = 28
+      Top = 0
+      Width = 61
+      Caption = 'Result: '
+      Font.Height = -20
+      ParentColor = False
+      ParentFont = False
+    end
+    object Memo1: TMemo
+      Left = 408
+      Height = 190
+      Top = 32
+      Width = 320
+      TabOrder = 7
+    end
+    object TMSFNCWXBarcodeDecoder1: TTMSFNCWXBarcodeDecoder
+      Left = 345
+      Height = 39
+      Top = 27
+      Width = 39
+      DoubleBuffered = True
+      TabOrder = 8
+      Visible = True
+      OnDecoded = TMSFNCWXBarcodeDecoder1Decoded
+    end
+    object TMSFNCWXQRDecoder1: TTMSFNCWXQRDecoder
+      Left = 347
+      Height = 39
+      Top = 79
+      Width = 39
+      DoubleBuffered = True
+      TabOrder = 9
+      Visible = True
+      Camera = TMSFNCWXCamera1
+      OnDecoded = TMSFNCWXBarcodeDecoder1Decoded
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    left = 480
+    top = 616
+  end
+end

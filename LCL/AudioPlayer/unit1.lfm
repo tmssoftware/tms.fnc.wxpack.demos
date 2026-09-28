@@ -1,0 +1,186 @@
+object Form1: TForm1
+  Left = 383
+  Height = 296
+  Top = 673
+  Width = 862
+  Caption = 'TMS FNC WX Audio Demo'
+  ClientHeight = 296
+  ClientWidth = 862
+  DesignTimePPI = 144
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object urlEdt: TEdit
+    Left = 24
+    Height = 33
+    Top = 114
+    Width = 560
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 0
+    Text = 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3'
+  end
+  object urlBtn: TButton
+    Left = 592
+    Height = 38
+    Top = 112
+    Width = 113
+    Anchors = [akTop, akRight]
+    Caption = 'Load URL'
+    OnClick = urlBtnClick
+    TabOrder = 1
+  end
+  object fileBtn: TButton
+    Left = 712
+    Height = 38
+    Top = 112
+    Width = 137
+    Anchors = [akTop, akRight]
+    Caption = 'Load local file'
+    OnClick = fileBtnClick
+    TabOrder = 2
+  end
+  object ctrlChk: TCheckBox
+    Left = 24
+    Height = 29
+    Top = 157
+    Width = 143
+    Caption = 'Show controls'
+    Checked = True
+    OnChange = ctrlChkChange
+    State = cbChecked
+    TabOrder = 3
+  end
+  object autoChk: TCheckBox
+    Left = 184
+    Height = 29
+    Top = 157
+    Width = 102
+    Caption = 'Autoplay'
+    OnChange = autoChkChange
+    TabOrder = 4
+  end
+  object loopChk: TCheckBox
+    Left = 296
+    Height = 29
+    Top = 157
+    Width = 71
+    Caption = 'Loop'
+    OnChange = loopChkChange
+    TabOrder = 5
+  end
+  object muteChk: TCheckBox
+    Left = 776
+    Height = 29
+    Top = 205
+    Width = 71
+    Anchors = [akTop, akRight]
+    Caption = 'Mute'
+    OnChange = muteChkChange
+    TabOrder = 6
+  end
+  object lengthPb: TProgressBar
+    Left = 24
+    Height = 9
+    Top = 215
+    Width = 576
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 7
+  end
+  object volTb: TTrackBar
+    Left = 616
+    Height = 32
+    Top = 205
+    Width = 150
+    OnChange = volTbChange
+    Position = 0
+    ShowSelRange = False
+    TickStyle = tsNone
+    Anchors = [akTop, akRight]
+    TabOrder = 8
+  end
+  object replayBtn: TButton
+    Left = 24
+    Height = 38
+    Top = 237
+    Width = 113
+    Caption = 'Replay'
+    OnClick = replayBtnClick
+    TabOrder = 9
+  end
+  object rewBtn: TButton
+    Left = 144
+    Height = 38
+    Top = 237
+    Width = 48
+    Caption = '<<'
+    OnClick = rewBtnClick
+    TabOrder = 10
+  end
+  object playBtn: TButton
+    Left = 200
+    Height = 38
+    Top = 237
+    Width = 113
+    Caption = 'Play'
+    OnClick = playBtnClick
+    TabOrder = 11
+  end
+  object forwBtn: TButton
+    Left = 319
+    Height = 38
+    Top = 237
+    Width = 48
+    Caption = '>>'
+    OnClick = forwBtnClick
+    TabOrder = 12
+  end
+  object rateCb: TComboBox
+    Left = 760
+    Height = 33
+    Top = 242
+    Width = 78
+    Anchors = [akTop, akRight]
+    ItemHeight = 25
+    ItemIndex = 3
+    Items.Strings = (
+      'x0.25'
+      'x0.5'
+      'x0.75'
+      'x1'
+      'x1.25'
+      'x1.5'
+      'x1.75'
+      'x2'
+    )
+    OnChange = rateCbChange
+    Style = csDropDownList
+    TabOrder = 13
+    Text = 'x1'
+  end
+  object Label1: TLabel
+    Left = 648
+    Height = 25
+    Top = 245
+    Width = 104
+    Anchors = [akTop, akRight]
+    Caption = 'Playback rate'
+    ParentColor = False
+  end
+  object TMSFNCWXAudioPlayer1: TTMSFNCWXAudioPlayer
+    Left = 0
+    Height = 98
+    Top = 0
+    Width = 862
+    Align = alTop
+    DoubleBuffered = True
+    TabOrder = 14
+    URL = 'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3'
+    OnPlay = TMSFNCWXAudioPlayer1Play
+    OnPause = TMSFNCWXAudioPlayer1Pause
+    OnTimeUpdate = TMSFNCWXAudioPlayer1TimeUpdate
+    OnMetaDataLoaded = TMSFNCWXAudioPlayer1MetaDataLoaded
+  end
+  object OpenDialog1: TOpenDialog
+    left = 472
+    top = 237
+  end
+end

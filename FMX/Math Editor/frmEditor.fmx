@@ -1,0 +1,207 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX Math Editor'
+  ClientHeight = 586
+  ClientWidth = 1094
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXMathEditor1: TTMSFNCWXMathEditor
+    Align = Client
+    Size.Width = 906.000000000000000000
+    Size.Height = 586.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Math = 
+      '\begin{equation}(1+x)^{n}=\sum_{i=0}^{n}{n\choose i}x^{i} \end{e' +
+      'quation}'
+    OnGetMath = TMSFNCWXMathEditor1GetMath
+    VirtualKeyboardMode = kmManual
+    VirtualKeyboards = [vkNumeric, vkRoman, vkGreek, vkFunctions, vkSymbols, vkLatex]
+    OnCaptureScreenshot = TMSFNCWXMathEditor1CaptureScreenshot
+  end
+  object Panel1: TPanel
+    Align = MostRight
+    Position.X = 906.000000000000000000
+    Size.Width = 188.000000000000000000
+    Size.Height = 586.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Keyboards: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 384.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 185.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Keyboards'
+      TabOrder = 0
+      object Numeric: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 24.000000000000000000
+        TabOrder = 43
+        Text = 'Numeric'
+        OnChange = NumericChange
+      end
+      object Roman: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 51.000000000000000000
+        TabOrder = 42
+        Text = 'Roman'
+        OnChange = RomanChange
+      end
+      object Greek: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 78.000000000000000000
+        TabOrder = 41
+        Text = 'Greek'
+        OnChange = GreekChange
+      end
+      object Functions: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 105.000000000000000000
+        TabOrder = 40
+        Text = 'Functions'
+        OnChange = FunctionsChange
+      end
+      object Symbols: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 132.000000000000000000
+        TabOrder = 39
+        Text = 'Symbols'
+        OnChange = SymbolsChange
+      end
+      object LaTeX: TCheckBox
+        Position.X = 8.000000000000000000
+        Position.Y = 159.000000000000000000
+        TabOrder = 38
+        Text = 'LaTeX'
+        OnChange = LaTeXChange
+      end
+    end
+    object KeyboardTheme: TGroupBox
+      Position.X = 8.000000000000000000
+      Position.Y = 272.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 104.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Keyboard Theme'
+      TabOrder = 1
+      object Apple: TRadioButton
+        GroupName = 'keyboardtheme'
+        IsChecked = True
+        Position.X = 8.000000000000000000
+        Position.Y = 24.000000000000000000
+        TabOrder = 40
+        Text = 'Apple'
+        OnChange = AppleChange
+      end
+      object Material: TRadioButton
+        GroupName = 'keyboardtheme'
+        Position.X = 8.000000000000000000
+        Position.Y = 51.000000000000000000
+        TabOrder = 39
+        Text = 'Material'
+        OnChange = MaterialChange
+      end
+      object Device: TRadioButton
+        GroupName = 'keyboardtheme'
+        Position.X = 8.000000000000000000
+        Position.Y = 78.000000000000000000
+        TabOrder = 38
+        Text = 'Device'
+        OnChange = DeviceChange
+      end
+    end
+    object KeyboardMode: TComboBox
+      Items.Strings = (
+        'Auto'
+        'Manual'
+        'On Focus'
+        'Off')
+      ItemIndex = 0
+      Position.X = 8.000000000000000000
+      Position.Y = 242.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = KeyboardModeChange
+    end
+    object Label1: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 212.000000000000000000
+      Text = 'Keyboard Mode'
+      TabOrder = 3
+    end
+    object ExportFormat: TComboBox
+      Items.Strings = (
+        'LaTeX'
+        'ASCIIMath'
+        'Spoken Text'
+        'MathMl'
+        'Spoken'
+        'Spoken SSML'
+        'Spoken SSML With Highlighting'
+        'LateX Expanded')
+      ItemIndex = 0
+      Position.X = 8.000000000000000000
+      Position.Y = 152.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+    end
+    object Label2: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 127.000000000000000000
+      Text = 'Export format'
+      TabOrder = 5
+    end
+    object Download: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 182.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Download'
+      OnClick = DownloadClick
+    end
+    object Undo: TButton
+      Position.X = 56.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Undo'
+      OnClick = UndoClick
+    end
+    object Redo: TButton
+      Position.X = 105.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Redo'
+      OnClick = RedoClick
+    end
+    object Snapshot: TButton
+      Hint = 'Take Snapshot'
+      Position.X = 8.000000000000000000
+      Position.Y = 79.000000000000000000
+      Size.Width = 172.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'cameratoolbutton'
+      TabOrder = 10
+      Text = 'Snapshot'
+      ParentShowHint = False
+      ShowHint = True
+      OnClick = SnapshotClick
+    end
+  end
+end

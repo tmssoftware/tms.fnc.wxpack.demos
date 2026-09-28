@@ -1,0 +1,164 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX Barcode Decoder Demo'
+  ClientHeight = 553
+  ClientWidth = 513
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TMSFNCWXCamera1: TTMSFNCWXCamera
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 500.000000000000000000
+    Size.Height = 350.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object Panel1: TPanel
+    Position.X = 8.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 497.000000000000000000
+    Size.Height = 177.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object decodeCamBtn: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 107.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Decode from camera'
+      OnClick = decodeCamBtnClick
+    end
+    object decodeImgBtn: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 139.000000000000000000
+      Size.Width = 217.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Decode from image'
+      OnClick = decodeImgBtnClick
+    end
+    object code128Rbtn: TRadioButton
+      Tag = 101
+      GroupName = 'codetype'
+      Position.X = 112.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 105.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Code 128'
+      OnClick = RadioBtnClick
+    end
+    object Label1: TLabel
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 14.000000000000000000
+      Text = 'Barcode type'
+      TabOrder = 8
+    end
+    object qrRBtn: TRadioButton
+      Tag = 100
+      GroupName = 'codetype'
+      IsChecked = True
+      Position.X = 8.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'QR'
+      OnClick = RadioBtnClick
+    end
+    object upcRBtn: TRadioButton
+      Tag = 102
+      GroupName = 'codetype'
+      Position.X = 8.000000000000000000
+      Position.Y = 54.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'UPC-A'
+      OnClick = RadioBtnClick
+    end
+    object eanRBtn: TRadioButton
+      Tag = 103
+      GroupName = 'codetype'
+      Position.X = 112.000000000000000000
+      Position.Y = 54.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'EAN-13'
+      OnClick = RadioBtnClick
+    end
+    object codaRBtn: TRadioButton
+      Tag = 104
+      GroupName = 'codetype'
+      Position.X = 8.000000000000000000
+      Position.Y = 78.000000000000000000
+      Size.Width = 97.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Codabar'
+      OnClick = RadioBtnClick
+    end
+    object TMSFNCWXBarcodeDecoder1: TTMSFNCWXBarcodeDecoder
+      Position.X = 215.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 26.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      OnDecoded = TMSFNCWXBarcodeDecoder1Decoded
+    end
+    object TMSFNCWXQRDecoder1: TTMSFNCWXQRDecoder
+      Position.X = 216.000000000000000000
+      Position.Y = 63.000000000000000000
+      Size.Width = 26.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Camera = TMSFNCWXCamera1
+      OnDecoded = TMSFNCWXBarcodeDecoder1Decoded
+    end
+    object Label2: TLabel
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 256.000000000000000000
+      Position.Y = 8.000000000000000000
+      TextSettings.Font.Size = 14.000000000000000000
+      Text = 'Result:'
+      TabOrder = 11
+    end
+    object Memo1: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Position.X = 256.000000000000000000
+      Position.Y = 32.000000000000000000
+      Size.Width = 225.000000000000000000
+      Size.Height = 129.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      Viewport.Width = 221.000000000000000000
+      Viewport.Height = 125.000000000000000000
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 312
+    Top = 416
+  end
+end

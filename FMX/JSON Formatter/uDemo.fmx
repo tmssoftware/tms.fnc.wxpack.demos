@@ -1,0 +1,129 @@
+object Demo: TDemo
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX SpeechSynthesis Demo'
+  ClientHeight = 524
+  ClientWidth = 810
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXJSONFormatter1: TTMSFNCWXJSONFormatter
+    Align = Client
+    Size.Width = 450.000000000000000000
+    Size.Height = 447.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    JSON.Strings = (
+      '')
+    Theme = ftLight
+    OpenAtDepth = 10.000000000000000000
+    Appearance.FontName = 'Arial'
+    Appearance.LinkColor = claDarkgoldenrod
+    Appearance.stringColor = claLightgreen
+    Appearance.NumberColor = claDarkorchid
+    Appearance.BooleanColor = claMediumvioletred
+    Appearance.NullColor = claOrange
+    Appearance.UndefinedColor = claFirebrick
+    Appearance.URLColor = claLightskyblue
+    Appearance.BracketColor = claLightsteelblue
+    Appearance.KeyColor = claAqua
+    Appearance.BackGroundColor = claDarkslategray
+  end
+  object StatusBar1: TStatusBar
+    Align = MostBottom
+    Position.Y = 496.000000000000000000
+    ShowSizeGrip = True
+    Size.Width = 810.000000000000000000
+    Size.Height = 28.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object ErrorLabel: TLabel
+      Align = Center
+      Size.Width = 580.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      TabOrder = 0
+    end
+  end
+  object Panel1: TPanel
+    Align = MostTop
+    Anchors = [akLeft, akRight]
+    Size.Width = 810.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object ThemeSelect: TComboBox
+      Items.Strings = (
+        'Light'
+        'Dark'
+        'Custom')
+      ItemIndex = 0
+      Position.X = 224.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = ThemeSelectChange
+    end
+    object FormatJSON: TButton
+      Position.X = 120.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Convert'
+      OnClick = FormatJSONClick
+    end
+    object LoadLocal: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 7.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 35.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Load Local File'
+      OnClick = LoadLocalClick
+    end
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        '{"widget":{"debug":"on","window":{"title":"Sample Konfabulator W' +
+        'idget","name":"main_window","width":500,"height":500},"image":{"' +
+        'src":"Images/Sun.png","name":"sun1","hOffset":250,"vOffset":250,' +
+        '"alignment":"center"},"text":{"data":"Click Here","size":36,"sty' +
+        'le":"bold","name":"text1","hOffset":250,"vOffset":100,"alignment' +
+        '":"center","onMouseUp":"sun1.opacity = (sun1.opacity / 100) * 90' +
+        ';"}}}')
+    TextSettings.WordWrap = True
+    Align = Left
+    Position.Y = 49.000000000000000000
+    Size.Width = 353.000000000000000000
+    Size.Height = 447.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Viewport.Width = 349.000000000000000000
+    Viewport.Height = 443.000000000000000000
+  end
+  object Splitter1: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 353.000000000000000000
+    Position.Y = 49.000000000000000000
+    Size.Width = 7.000000000000000000
+    Size.Height = 447.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 544
+    Top = 744
+  end
+end

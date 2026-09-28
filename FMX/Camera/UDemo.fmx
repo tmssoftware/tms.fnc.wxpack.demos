@@ -1,0 +1,79 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX Camera Demo'
+  ClientHeight = 679
+  ClientWidth = 420
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXCamera1: TTMSFNCWXCamera
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 400.000000000000000000
+    Size.Height = 300.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnStart = TMSFNCWXCamera1Start
+    OnPause = TMSFNCWXCamera1Pause
+    OnStop = TMSFNCWXCamera1Stop
+    OnSnapshot = TMSFNCWXCamera1Snapshot
+  end
+  object startBtn: TButton
+    Tag = 101
+    Position.X = 8.000000000000000000
+    Position.Y = 312.000000000000000000
+    TabOrder = 2
+    Text = 'Start'
+    OnClick = startBtnClick
+  end
+  object pauseBtn: TButton
+    Tag = 102
+    Enabled = False
+    Position.X = 96.000000000000000000
+    Position.Y = 312.000000000000000000
+    TabOrder = 3
+    Text = 'Pause'
+    OnClick = startBtnClick
+  end
+  object stopBtn: TButton
+    Tag = 103
+    Enabled = False
+    Position.X = 184.000000000000000000
+    Position.Y = 312.000000000000000000
+    TabOrder = 4
+    Text = 'Stop'
+    OnClick = startBtnClick
+  end
+  object ssBtn: TButton
+    Tag = 104
+    Enabled = False
+    Position.X = 275.000000000000000000
+    Position.Y = 312.000000000000000000
+    Size.Width = 134.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Take snapshot'
+    OnClick = startBtnClick
+  end
+  object Label1: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 346.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Image taken from camera feed:'
+    TabOrder = 6
+  end
+  object ImageControl1: TImageControl
+    Position.X = 8.000000000000000000
+    Position.Y = 368.000000000000000000
+    Size.Width = 401.000000000000000000
+    Size.Height = 297.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+  end
+end

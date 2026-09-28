@@ -1,0 +1,135 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX Barcode Demo'
+  ClientHeight = 368
+  ClientWidth = 587
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TMSFNCWXQRCode1: TTMSFNCWXQRCode
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 350.000000000000000000
+    Size.Height = 350.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'helloworld'
+    Settings.TitleFont.Name = 'Segoe UI'
+    Settings.SubTitleFont.Name = 'Segoe UI'
+    Settings.AutoColorDarkAlpha = 0.600000023841857900
+    Settings.AutoColorLightAlpha = 0.699999988079071000
+  end
+  object TMSFNCWXBarcode1: TTMSFNCWXBarcode
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 350.000000000000000000
+    Size.Height = 350.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Visible = False
+    Text = 'helloworld'
+  end
+  object qrRBtn: TRadioButton
+    Tag = 100
+    GroupName = 'codetype'
+    IsChecked = True
+    Position.X = 376.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'QR'
+    OnClick = RadioBtnClick
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Text = 'helloworld'
+    Position.X = 376.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 201.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    OnTyping = Edit1Typing
+  end
+  object code128Rbtn: TRadioButton
+    Tag = 101
+    GroupName = 'codetype'
+    Position.X = 376.000000000000000000
+    Position.Y = 120.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = 'Code 128'
+    OnClick = RadioBtnClick
+  end
+  object RadioButton2: TRadioButton
+    Tag = 102
+    GroupName = 'codetype'
+    Position.X = 376.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = 'Code 39 Extended'
+    OnClick = RadioBtnClick
+  end
+  object RadioButton3: TRadioButton
+    Tag = 103
+    GroupName = 'codetype'
+    Position.X = 376.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Code 93 Extended'
+    OnClick = RadioBtnClick
+  end
+  object RadioButton4: TRadioButton
+    Tag = 104
+    GroupName = 'codetype'
+    Position.X = 376.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Telepen'
+    OnClick = RadioBtnClick
+  end
+  object RadioButton5: TRadioButton
+    Tag = 105
+    GroupName = 'codetype'
+    Position.X = 376.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Text = 'PDF417'
+    OnClick = RadioBtnClick
+  end
+  object Label1: TLabel
+    Position.X = 376.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Barcode type'
+    TabOrder = 9
+  end
+  object Label2: TLabel
+    Position.X = 376.000000000000000000
+    Position.Y = 8.000000000000000000
+    Text = 'Text to encode'
+    TabOrder = 10
+  end
+end

@@ -1,0 +1,500 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  ActiveControl = Basic
+  BorderStyle = Single
+  Caption = 'TTMSFNCWXDocx Demo'
+  ClientHeight = 884
+  ClientWidth = 816
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 816.000000000000000000
+    Size.Height = 884.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 2
+    TabOrder = 0
+    TabPosition = PlatformDefault
+    Sizes = (
+      816s
+      858s
+      816s
+      858s
+      816s
+      858s
+      816s
+      858s)
+    object Basic: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 47.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Basic'
+      ExplicitSize.cx = 47.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object BasicDocx: TButton
+        Align = Bottom
+        Position.Y = 809.000000000000000000
+        Size.Width = 816.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Generate a basic document using this code'
+        OnClick = BasicDocxClick
+      end
+      object Memo1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'procedure TForm4.BasicDocxClick(Sender: TObject);'
+          'var'
+          '  section: TTMSFNCWXDocxSection;'
+          '  paragraph:  TTMSFNCWXDocxParagraph;'
+          '  text: TTMSFNCWXDocxText;'
+          'begin'
+          '  FMulti := false;'
+          '  TMSFNCWXDocx1.Document.Sections.Clear;'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.AddParagraph;'
+          '  text := paragraph.AddText('#39'Hello world'#39');'
+          '  text.Font.Color := gcRed;'
+          ''
+          
+            '  TMSFNCWXDocx1.GetDocxAsFile(TPath.GetDocumentsPath + PathDelim' +
+            ' + '#39'BasicDemo.docx'#39');'
+          'end;')
+        ReadOnly = True
+        Align = Client
+        Size.Width = 816.000000000000000000
+        Size.Height = 809.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 812.000000000000000000
+        Viewport.Height = 805.000000000000000000
+      end
+    end
+    object Intermediate: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 88.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Intermediate'
+      ExplicitSize.cx = 88.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object IntermediateDocx: TButton
+        Align = Bottom
+        Position.Y = 809.000000000000000000
+        Size.Width = 816.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Generate an intermediate document using this code'
+        OnClick = IntermediateDocxClick
+      end
+      object Memo2: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          
+            'procedure TForm4.GenerateIntermediateDocument(FileName, Title: S' +
+            'tring);'
+          'var'
+          '  section: TTMSFNCWXDocxSection;'
+          '  paragraph:  TTMSFNCWXDocxParagraph;'
+          '  table: TTMSFNCWXDocxTable;'
+          '  tableCell: TTMSFNCWXDocxTableCell;'
+          '  TableRow: TTMSFNCWXDocxTableRow;'
+          '  i, j: Integer;'
+          'begin'
+          '  TMSFNCWXDocx1.Document.Sections.Clear;'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  section.Page.Orientation := poLandscape;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Heading := hlTitle;'
+          '  paragraph.AddText(Title);'
+          '  paragraph.Alignment := taCenter;'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.AddText('#39'Hello World - table'#39');'
+          '  paragraph.Heading := hlHeading1;'
+          '  paragraph.Alignment := taCenter;'
+          '  table := section.AddTable;'
+          ''
+          '  for i := 0 to 3 do'
+          '  begin'
+          '    tableRow := Table.AddRow;'
+          '    for j := 0 to 3 do'
+          '    begin'
+          '      tableCell := tableRow.AddCell;'
+          '      paragraph := TableCell.AddParagraph;'
+          
+            '      paragraph.AddText('#39'row '#39' + IntToStr(i) + '#39' cell '#39' + IntToS' +
+            'tr(j));'
+          '    end;'
+          '  end;'
+          ''
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Heading := hlHeading2;'
+          '  paragraph.Alignment := taRight;'
+          '  paragraph.AddText('#39'image'#39');'
+          '  paragraph.AddImage(TMSFNCBitmapContainer1.Bitmaps[0],500,500);'
+          '  TMSFNCWXDocx1.GetDocxAsFile(fileName);'
+          'end;')
+        ReadOnly = True
+        Align = Client
+        Size.Width = 816.000000000000000000
+        Size.Height = 809.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Viewport.Width = 812.000000000000000000
+        Viewport.Height = 805.000000000000000000
+      end
+    end
+    object Advanced: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 73.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Advanced'
+      ExplicitSize.cx = 73.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object AdvancedDocx: TButton
+        Align = Bottom
+        Position.Y = 809.000000000000000000
+        Size.Width = 816.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Generate an advanced document using this code'
+        OnClick = AdvancedDocxClick
+      end
+      object Memo3: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'procedure TForm4.AdvancedDocxClick(Sender: TObject);'
+          'var'
+          '  section: TTMSFNCWXDocxSection;'
+          '  paragraph:  TTMSFNCWXDocxParagraph;'
+          '  text: TTMSFNCWXDocxText;'
+          '  table: TTMSFNCWXDocxTable;'
+          '  tableCell: TTMSFNCWXDocxTableCell;'
+          '  TableRow: TTMSFNCWXDocxTableRow;'
+          '  i, j: Integer;'
+          '  toc: TTMSFNCWXDocxTableOfContents;'
+          '  internalHyperlink: TTMSFNCWXDocxInternalHyperLink;'
+          '  externalHyperlink: TTMSFNCWXDocxExternalHyperlink;'
+          'begin'
+          '  FMulti := false;'
+          '  TMSFNCWXDocx1.Document.Sections.Clear;'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  section.Page.Orientation := poLandscape;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Heading := hlTitle;'
+          '  paragraph.Alignment := taCenter;'
+          
+            '  paragraph.AddBookmark('#39'titleBookmark'#39', '#39'Demo: A docx.js Story'#39 +
+            ');'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  toc := section.AddTableOfContents;'
+          '  toc.Hyperlink := true;'
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.AddText('#39'Hello World - table'#39');'
+          '  paragraph.Heading := hlHeading1;'
+          '  paragraph.Alignment := taCenter;'
+          '  table := section.AddTable;'
+          ''
+          '  for i := 0 to 3 do'
+          '  begin'
+          '    tableRow := Table.AddRow;'
+          '    for j := 0 to 3 do'
+          '    begin'
+          '      tableCell := tableRow.AddCell;'
+          '      paragraph := TableCell.AddParagraph;'
+          
+            '      paragraph.AddText('#39'row '#39' + IntToStr(i) + '#39' cell '#39' + IntToS' +
+            'tr(j));'
+          '    end;'
+          '  end;'
+          ''
+          ''
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.Footers.DefaultFooter.AddParagraph;'
+          '  paragraph.AddPageNumber;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Heading := hlHeading2;'
+          '  paragraph.Alignment := taRight;'
+          '  paragraph.AddText('#39'Image'#39');'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.AddImage(TMSFNCBitmapContainer1.Bitmaps[0],500,500);'
+          ''
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Heading := hlHeading2;'
+          '  paragraph.Alignment := taRight;'
+          '  text := paragraph.AddText('#39'Some random text'#39');'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Alignment := taLeft;'
+          '  paragraph.AddText('#39'lorem ipsum and something else.'#39');'
+          '  text.Font.Color := gcAquamarine;'
+          '  paragraph.AddText('#39'lorem ipsum and something else.'#39');'
+          '  text.Font.Style := [TFontStyle.fsUnderline];'
+          '  text.Underline.UnderlineType := utDouble;'
+          '  paragraph.AddText('#39'lorem ipsum and something else.'#39');'
+          '  paragraph.AddText('#39'lorem ipsum and something else.'#39');'
+          ''
+          '  section := TMSFNCWXDocx1.Document.AddSection;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 0;'
+          '  text := paragraph.AddText;'
+          '  text.Text := '#39'bullet point level 0'#39';'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 1;'
+          '  text := paragraph.AddText;'
+          '  text.Text := '#39'bullet point level 1'#39';'
+          '  text.Font.Color := gcRed;'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 2;'
+          '  text := paragraph.AddText;'
+          '  text.Text := '#39'bullet point level 2'#39';'
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 3;'
+          '  text := paragraph.AddText;'
+          '  text.Text := '#39'bullet point level 3'#39';'
+          ''
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 0;'
+          '  internalHyperlink := paragraph.AddInternalHyperlink;'
+          '  internalHyperlink.Anchor := '#39'titleBookmark'#39';'
+          '  text := internalHyperlink.AddText;'
+          '  text.Text := '#39'link to title'#39';'
+          ''
+          '  paragraph := section.AddParagraph;'
+          '  paragraph.Bullet.Level := 0;'
+          '  externalHyperlink := paragraph.AddExternalHyperlink;'
+          '  externalHyperlink.Link := '#39'https://www.tmssoftware.com'#39';'
+          '  text := externalHyperlink.AddText;'
+          '  text.Text := '#39'link to tmssoftware page'#39';'
+          ''
+          
+            '  TMSFNCWXDocx1.GetDocxAsFile(TPath.GetDocumentsPath + PathDelim' +
+            ' + '#39'AdvancedDocx.docx'#39');'
+          'end;')
+        ReadOnly = True
+        Align = Client
+        Size.Width = 816.000000000000000000
+        Size.Height = 809.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 796.000000000000000000
+        Viewport.Height = 805.000000000000000000
+      end
+    end
+    object Multiple: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 117.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Multiple docx files'
+      ExplicitSize.cx = 117.000000000000000000
+      ExplicitSize.cy = 26.000000000000000000
+      object Multi: TButton
+        Align = Bottom
+        Position.Y = 809.000000000000000000
+        Size.Width = 816.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Generate 10 documents using this code'
+        OnClick = MultiClick
+      end
+      object Memo4: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'procedure TForm4.MultiClick(Sender: TObject);'
+          'var'
+          '  i: Integer;'
+          'begin'
+          '  FMulti := true;'
+          '  for I := 0 to 9 do'
+          '  begin'
+          
+            '    GenerateIntermediateDocument(TPath.GetDocumentsPath + PathDe' +
+            'lim + '#39'intermediateDocx'#39' + IntToStr(i) + '#39'.Docx'#39', '#39'My Document'#39' ' +
+            '+ IntToStr(i));'
+          '  end;'
+          ''
+          '  TTMSFNCUtils.OpenURL(TPath.GetDocumentsPath);'
+          'end;')
+        ReadOnly = True
+        Align = Client
+        Size.Width = 816.000000000000000000
+        Size.Height = 809.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 812.000000000000000000
+        Viewport.Height = 805.000000000000000000
+      end
+    end
+  end
+  object TMSFNCWXDocx1: TTMSFNCWXDocx
+    Position.X = 8.000000000000000000
+    Position.Y = 34.000000000000000000
+    Size.Width = 39.000000000000000000
+    Size.Height = 39.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnDownloadAsFile = TMSFNCWXDocx1DownloadFile
+  end
+  object TMSFNCBitmapContainer1: TTMSFNCBitmapContainer
+    Size.Width = 39.000000000000000000
+    Size.Height = 39.000000000000000000
+    Size.PlatformDefault = False
+    Position.X = 8.000000000000000000
+    Position.Y = 81.000000000000000000
+    Items = <
+      item
+        Bitmap.PNG = {
+          89504E470D0A1A0A0000000D4948445200000080000000800806000000C33E61
+          CB000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+          0D8C49444154785EED9C0B7055C519C7BFDD73CECD4D080692FB48424A28521F
+          A92DB614AA20A8639DD6E920D6F151ED804C415BB5A0ADD8AAD0815A1FAD0C33
+          A838D2620575EA83D6DA8AA51DDBB162B53E6AAB2286D6422590C77D110879DD
+          C739BBFDF6664973B9CF840403F7FBCD9CDCDDEFBCEED9FDEFEEF7EDD91B2008
+          8220088220088220088220088220088220088220088220088220088220088220
+          088220088220088220088220088220088220462B4C7F426D6DED2784935887A6
+          8BB5290D09F01BCB722D6D6E6E6ED126E23887EB4FA248210114392480228704
+          50E490008A1C12409143022872587575F51C9DF649296E6600B3743E0D21E115
+          CEF903980CF759FE0F731CC706782F1C0E7769530A353535B3A594FDF30E47C2
+          BBBB3F68EDECDCAFB386DF3FFE3426AD4B2563D3F0A431DA0E0CC4FB5CB24D2D
+          A1D0766DCA09DEB70CBFDB4C01304F024C618C997A571209E24FF8B5FE100A85
+          DED7A66101CBB54108712167728674A4971946FFB34BC7E9E286B18349B9CD61
+          ECF56030D8AD771D7358B5DF8765D34FD60A1A009663463AB9619ED7DADAFA8E
+          CEA7E0F57A63066796CEA62181CDC382D88AC795722E5777774717948F292BC5
+          5D99BE932325FCD614E2F696486437E6073E83824D9932C5D5D575E84648384B
+          C034EA95AD6F571AB2A7371A75BBDD2FA340EF4201BF8936A76FD7E0A8AFAF77
+          277A7B67092E57380ECCD4CF9BF5BEFA3308526E75243C80CFBEB3B1B13181B6
+          6C653CEC28010CD7CD9400CECD230097CEA6C3F815580161DCD67306A76A6B2E
+          8423E43FB0452FF77842DB1A1B21AE8C95959527955A7C765CB09578BFE9C923
+          0B04EF7D10EF7D5FC2919B2291484099FAF6E4C7EFF74FC2F36F8DC562DF2C75
+          97B8B57990C8E725F0B56E77F49DA6A68E83DA38A28C1E1F403A5F6320B71458
+          F90AAE2A180BFDEE48C4A78631ABAAAAAAD6E5325738C09F1C6CE52B504CE362
+          096725F6D6AB2654564E50A6BE3DB9A9F178A6A17A9EC0EF7EC3D02B5FC12EC6
+          3278311A75FD107BB0126D1C51469113C8AEC23FE57DE9C25115CD18DC823DCC
+          0CC33096C7E3F652349FD4B777F0B82CB3440858E858C632358C687356EABCDE
+          2936630FE37738479B8E16AC1339B9B3B333C55719294E8828201A8D9DC739BB
+          0F5BE0025581DA3C6492435557CFE2CECE83F3309BB317C0CA5F8EC74FD3D9A3
+          06C79C4352F275C7CA31647EBFE789BE242F43C76A0616625D5F3E1D1C73F761
+          41FF1D87DF1E6D1A00EB65CCB83B10083469430A797D80D18823DE0C44222A2A
+          CAE814A2A77F7A229178C5320D8F36A591B09D88C5F9EB92CB0E95678C97802D
+          4EEF8A4627A3935B963C680012E4CFC78EAD58BA6BD7AE98368D28CCE7F3F955
+          C23445ADE3F07B51EE5F4EEEC90086815B4D2997A3EADBB4A91F1C3F25AAB61D
+          93180DA6331801A057DE5BE676BF8421E02B98C5D0504C44715EC919FB14E607
+          D56BE179CA997A099FEB35BC5E079E3C4942E26A7CE24FA23D67EB46FF22C1B8
+          71268ABA519B52A8AEF67DABB737B636DBB88FE5F557BCC66D258ED31437CD64
+          B96068888FC1CA309C9E8861E0A518CE5C8DE552993C01A0CD14724E7338BC4B
+          E7479CFE0218E9F500850A20D9622C6B81699A2A1CEBC5F04CA8F1B0444A7F9C
+          895F62FD7F11ED392BAE1FDBF9489AE6A29268F45D3176AC0AF592D7C24A29C7
+          C25FC3384321E41101C83B82C1F0BD3A9B428DDFF3307AED8B309939BC95F03D
+          D3E55A8FE5D5AB2D0331D0695542988CDB7750180BD0F9BC3D1008ADC57D4786
+          B523C668F3010EB90D632EB6B817B1D0DA55C1A9AE508D877B43A18FB801D7C4
+          137632DCCB07B6BE03D8D22EC773B7EDEDE83830F05AA15028E82E2B5BAC5AA8
+          3E3C0772864EA48163B56AB9D90524C495F1783C9B43EAECDFBFBF331C0E6F47
+          612E71713EA7BCFCA487D07ECC2A5F31BA04C0E0FB2DA150B68918D9DA1AF94F
+          8965BEA0F339614C2C6B8B44FE89C98C05DAD4D4144581ACD2D9ACE84ACE8C94
+          9D3A951983CFE018A6D67BBDD5DA9209A9BE4B4B30F8D6B11AF707327A0480DD
+          7565A56723A6724DBE4829E44BEAB32F9B95DDC16064137EE63C0E7B83BFE001
+          439E70911CDEC31E29D7AC2103CE16C538FBB0DAEB7DAAD6EB9D89DDFE583563
+          88FB8E2CFB7CCF34228C1E0118F042636363FEEECF3076E8545618C8E7F1A3B0
+          029590F77AD9E12FB8649F779F87B12884AFA3FBF72A460CEFC47A7AD6A1202E
+          A9A9A939ADAEAE4EF5301F5B3D8C1E0170BE13FF0ECFF8275946AF3D13E80C36
+          EBE4A0C11EE423E6B21EC764A1DF5BF90B27AB5E01B7A76DDB7E369188DFA5C4
+          3061C204157E17E6DC1EC986DD7ED8D8320B36EEFD0AFC62DF45C96DC3DE19F0
+          F8BBFD2FD1B2316A0420041BBE95C686B14FA7F282DD78AB4E0E09016C350E4C
+          BFC6A160B0E3B785515103D6F8F52886079D44624D75B577BE1E1E0A63F36603
+          1E6D9E0986752748FB21ECCDD6E337EADB98B30E12E357C1A67D9FD5476764F4
+          F400C729D80B8424E3B79598E69DB623324E8215402DB6FD2BA464F7C47A7B57
+          E1B0A0DE82E666E54A0E3D674DC396F363E8610BB12AA76207520F8C4F4C6EDC
+          9C0EBD7C292A74153CBAE7F3FAAC344800C3801A0A62B6BD0EE3F94512C4735D
+          DD3D19664AF383BDC104FCF36D271EFFAE366567F2B5E3C1913741949D036590
+          797E45D93BE02200733E3CD65CA5AD2990008689F6F6F643A150E8650C1BAF2F
+          2F2F9D0F423E8DE6437D7B07458514E22AAFD77BB2CE6740328C9A4E07D67B49
+          D6CA3F4C05B851281740427C5A5B5220010C2F8E9A640A04C25B12425C27814D
+          15525C8762D882FB0A7670E342F82D2EB3BFCEDEFC2B8E1A380B604CDABB848C
+          1CE86800834FD6B9144800234342CDF2E1D0B027148A3C5A5E5171B9CB1175E8
+          A4ADC07D6AA1494E5C96596ACBCC1596E4032FC3F045AD722A0C4F8581BE82A1
+          73299000461E47CDF0ED8D44DA02A1D03DD82B9C8D9DC19FF5BE6C94322627E9
+          7466F0423A7554F40B40BDCDD3C9AC4829AB62B158DAABCF86860657ADD77B26
+          26B3AEF93B51F1FBFD67783C9E3DF83917C76DB5A02557C5A837A67B84E43FC5
+          74AE377E582F2C4738781E469FB01D2291C226BBA2B16E3C3ED30BA9FF0BC0EC
+          EA52AB7933AEE83D4C4F4FEF74CE61E104AF77AA5A6D5B5F51314EAD7E6D8F44
+          96441DE7458C63E7EA438B027CF67A06CE06D3E01319C867B111ADABF67866A3
+          187CB83B6397AB70D9F64E6CC1EA3D4546D40B2F6C8ED9878A1F31F427E4AB50
+          55997FBE4389C46DBE0DC251136D69F40BA0A9A3E3203A167B7BA3B1A836A5A1
+          1630E0E073631C600308FBF6A8DBBD12A4FD08AA6B358E5B1E706009B6861A7D
+          F809CDC48A8AF1523A7763117E01B3AAD55B9CC17C1BE07126C43D353EDFA2EA
+          6ACF1C2592F1E3C757244FC2E394386C97391798ADCECB886599BDC0E51E9DCD
+          8C55D284F77E184798B425FA298CF304F1B64F417722E3EC688A0F804FF156A9
+          DBC83733A666B0A6E310B402557F335E02C7B4640130F47CCFC01EE2ABC9A34E
+          601AB011C74B4A166263503DDEC0B57B1C7B837A35D58B81DA6A90FC016C20F7
+          5B96757FB5CF97DC501CF7A3ED563C2DAB93C76CE780E3C06B3A9B990535DD20
+          E21B41B0F5383663256720E1EC0353AC8668E239B8E9948C33952902B0A57C1D
+          4DFFC5E490E6E42DD3A8E48CCDF5F97CD93DD81380768FE70247CAC598CCB588
+          55AD03988AE5390F7B866BB0892CC56D897A2994ABF21101267F03FD898C5D76
+          0AD79E1C04976B1DF602D763ACBF16CF7C0A43CE67929B94F7E275E683157B04
+          6E9812D267A491228070381C424561B7923F54C9021792CDC6C1EF4BE7A6B68C
+          130A14799BD1B7C66FD85FE1DA8E38C0B8B9A6B1B1B1A0852FD8138460F2A42D
+          E0E27701B89761A9DF92DC6272352C9AB80DE69F9273322A450088C098F5F712
+          E4336A5D9EB60D85D20F6B6A8EAF05A083A0351CDE610AB6005B995AC1A37EC9
+          335C745A8C7DA3ADADED5D9D2F8CF3990DD7D4ED87C5DE565838B125B9DD507F
+          40EFCDC991020015B35A56C9F2B232F7DD8E9085A95023A43C603079DF18DBDE
+          880F7134021AEDD8CDE1F06ED355721B13F27C7CF0825629E502AFB3D30036AF
+          2D1C56730443FA69DA5048138042AD9F0B04423FE19C5F847D526E6F548395FF
+          2F8BF1CBDA82E1D5BBDADB55B7F3B1AC70398648554E58617F0B84C3970AA9C6
+          7BF924361AB532BA70BABA558CFE60D4B6CF6E09065F46CB31AB7C4521B349CC
+          E7F32C4247E64A89214F2261971A86A17E0CAC2AF89065F15731FEFD5D201056
+          0B23B2563A3A865BD103CEEA17189CAF6C0D85DEC0644EE1D4F97C9FC168638D
+          CE668449794760FFFEB775362718AE5D2784B84C67D3E006DB8EA25EA6B3F960
+          35353555D2B6E7302E2F14C0CFC2029E82A1B5E972B9928D4D951B36AC2ECED9
+          0EC6E08F25926DDE1B0AA9D7C84753F15643835A5AD0088D8D20309DBC17FA11
+          AA2C730E518508200515D74A29D56F09F60483C1087E0ECF2A9E139853ABAAC6
+          7658D6693ABB2780AD45A78705BFDFFB33E6C859C0584872F96FE6C0E704E715
+          5CCAF7B077C2A8233B83160031FAF0FB7C8F616FB240670F23715CDE9C4F0019
+          7D00A27820011439248022870450E490008A1C124091430228724800450E09A0
+          C821011439FD53C1EA47893D3D3DA732C6B2FEC3236274C298F801037EA1CE1E
+          A6A0A9E07E0178BDDE6A83B13B4088F3B589384E9006AFC38A1CA7B387199C00
+          0AF92751C47105BD0C22F2430228724800450E09802008822008822008822008
+          8220088220088220088220088220088220088220088220088220088220088220
+          088220088220088220462300FF03E2CC3D927111ACDE0000000049454E44AE42
+          6082}
+        Name = 'logo_tms_software_small_128x128.png'
+        Tag = 0
+      end>
+  end
+end

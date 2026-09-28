@@ -1,0 +1,46 @@
+object FrmMain: TFrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Demo TMS FNC WX HTMLMemo'
+  ClientHeight = 548
+  ClientWidth = 640
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXHTMLMemo1: TTMSFNCWXHTMLMemo
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 515.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 640.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object btnOpen: TButton
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Open file'
+      OnClick = btnOpenClick
+    end
+    object btnSave: TButton
+      Position.X = 88.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Save as...'
+      OnClick = btnSaveClick
+    end
+  end
+end

@@ -1,0 +1,253 @@
+object Form6: TForm6
+  Left = 0
+  Top = 0
+  Caption = 'TMSFNCWXContainer - Demo'
+  ClientHeight = 490
+  ClientWidth = 894
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXContainer1: TTMSFNCWXContainer
+    Align = Client
+    Size.Width = 894.000000000000000000
+    Size.Height = 422.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Links = <
+      item
+        URL = 
+          'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.' +
+          'min.css'
+        Rel = 'stylesheet'
+        Defer = False
+        Async = False
+        Kind = mlkLink
+      end
+      item
+        URL = 
+          'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.b' +
+          'undle.min.js'
+        Defer = False
+        Async = False
+        Kind = mlkScript
+      end
+      item
+        URL = 'https://code.jquery.com/jquery-3.6.0.min.js'
+        Defer = False
+        Async = False
+        Kind = mlkScript
+      end
+      item
+        URL = 
+          'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/al' +
+          'l.min.css'
+        Rel = 'stylesheet'
+        Defer = False
+        Async = False
+        Kind = mlkLink
+      end
+      item
+        Content.Strings = (
+          'body {'
+          'display: flex;'
+          'flex-direction: column;'
+          '}')
+        Defer = False
+        Async = False
+        Kind = mlkStyle
+      end
+      item
+        URL = 
+          'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min' +
+          '.js'
+        Defer = True
+        Async = False
+        Kind = mlkScript
+      end
+      item
+        URL = 
+          'https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min' +
+          '.css'
+        Rel = 'stylesheet'
+        Defer = False
+        Async = False
+        Kind = mlkLink
+      end
+      item
+        URL = 
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&d' +
+          'isplay=swap'
+        Rel = 'stylesheet'
+        Defer = False
+        Async = False
+        Kind = mlkLink
+      end>
+    ElementContainers = <
+      item
+        HTML.Strings = (
+          
+            '<div id="carouselExampleCaptions" class="carousel slide" data-bs' +
+            '-ride="carousel" style="z-index:10">'
+          '  <div class="carousel-inner">'
+          '    <div class="carousel-item active">'
+          
+            '      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%2' +
+            '0(15).webp" class="d-block w-100" alt="...">'
+          '      <div class="carousel-caption d-none d-md-block">'
+          '      </div>'
+          '    </div>'
+          '    <div class="carousel-item">'
+          
+            '      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%2' +
+            '0(22).webp" class="d-block w-100" alt="...">'
+          '      <div class="carousel-caption d-none d-md-block">'
+          '       </div>'
+          '    </div>'
+          '    <div class="carousel-item">'
+          
+            '      <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%2' +
+            '0(23).webp" class="d-block w-100" alt="...">'
+          '      <div class="carousel-caption d-none d-md-block">'
+          '       </div>'
+          '    </div>'
+          '  </div>'
+          '</div>')
+        Actions = <>
+        Position = poCustom
+        HTMLElementID = 'ElementContainer0'
+        UseDefaultStyle = False
+        Style.Strings = (
+          '#ElementContainer0{'
+          'overflow: hidden;'
+          'height: 100vh;'
+          'left: 0;'
+          'right: 0;'
+          'position: relative;'
+          ''
+          '}'
+          '.carousel {'
+          'overflow:hidden;'
+          '}'
+          ''
+          'img {'
+          'object-fit: scale-down;'
+          'height:100vh;'
+          '}')
+        Script.Strings = (
+          'function InitCarousel() {'
+          '  debugger;'
+          
+            '  $('#39'#carouselExampleCaptions'#39').on('#39'slide.bs.carousel'#39', function' +
+            ' (a) {'
+          '    CallBack('#39'CarouselSlide'#39', a);'
+          '  });'
+          '}'
+          'function AddImage(image){'
+          
+            ' $('#39'<div class="carousel-item"><img src="'#39'+image+'#39'" class="d-blo' +
+            'ck w-100"><div class="carousel-caption"></div>   </div>'#39').append' +
+            'To('#39'.carousel-inner'#39');'
+          
+            '    $('#39'<li data-target="#carousel-example-generic" data-slide-to' +
+            '="'#39'+i+'#39'"></li>'#39').appendTo('#39'.carousel-indicators'#39')'
+          '}')
+      end
+      item
+        HTML.Strings = (
+          ''
+          '<nav class="navbar navbar-dark bg-dark">'
+          '  <div class="container-fluid">'
+          
+            '    <button class="navbar-toggler ms-auto" type="button" data-md' +
+            'b-toggle="collapse"'
+          
+            '      data-mdb-target="#navbarToggleExternalContent3" aria-contr' +
+            'ols="navbarToggleExternalContent3"'
+          '      aria-expanded="false" aria-label="Toggle navigation">'
+          '      <i class="fas fa-bars"></i>'
+          '    </button>  </div>'
+          '</nav>'
+          '<div class="collapse" id="navbarToggleExternalContent3">'
+          '  <div class="bg-light shadow-3 p-4">'
+          
+            '    <button class="btn btn-link btn-block border-bottom m-0" id=' +
+            '"loadimg">Load Image</button>'
+          
+            '    <button class="btn btn-link btn-block border-bottom m-0" id=' +
+            '"cycle">Start/Pause cycling</button>'
+          '     </div>'
+          '</div>')
+        Actions = <
+          item
+            HTMLElementID = 'loadimg'
+            Name = 'Action0'
+            OnExecute = TMSFNCWXContainer1ElementContainers1Actions0Execute
+          end
+          item
+            Name = 'Action1'
+            OnExecute = TMSFNCWXContainer1ElementContainers1Actions1Execute
+          end>
+        Position = poTopCenter
+        HTMLElementID = 'ElementContainer1'
+        UseDefaultStyle = False
+        Style.Strings = (
+          '#ElementContainer1 {'
+          'top: 0;'
+          'left:0;'
+          'right: 0;'
+          'width: 100%;'
+          'z-index: 9999999;'
+          ''
+          '}')
+      end>
+    OnControlInitialized = TMSFNCWXContainer1ControlInitialized
+    OnCustomEvent = TMSFNCWXContainer1CustomEvent
+  end
+  object Panel1: TPanel
+    Align = Bottom
+    Position.Y = 422.000000000000000000
+    Size.Width = 894.000000000000000000
+    Size.Height = 68.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Previous: TButton
+      Anchors = [akTop]
+      Position.X = 19.875000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 72.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Previous'
+      OnClick = PreviousClick
+    end
+    object Next: TButton
+      Anchors = [akTop]
+      Position.X = 793.045532226562500000
+      Position.Y = 8.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Next'
+      OnClick = NextClick
+    end
+    object Label1: TLabel
+      Anchors = [akTop]
+      Position.X = 191.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 512.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'Slide 1'
+      TabOrder = 2
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'Image|*.jpg;*.jpeg;*.png;'
+    Left = 104
+    Top = 632
+  end
+end

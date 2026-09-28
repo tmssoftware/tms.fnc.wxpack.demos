@@ -1,0 +1,58 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'TTMSFNCWXDocxDemo - Load From Template'
+  ClientHeight = 202
+  ClientWidth = 232
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TMSFNCWXDocx1: TTMSFNCWXDocx
+    Position.X = 24.000000000000000000
+    Position.Y = 97.000000000000000000
+    Size.Width = 39.000000000000000000
+    Size.Height = 39.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object LoadTemplate: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 54.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 35.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Load Template from JSON'
+    OnClick = LoadTemplateClick
+  end
+  object CreateInvoice: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 169.000000000000000000
+    Size.Height = 34.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Create Invoices'
+    OnClick = CreateInvoiceClick
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'JSON|*.JSON'
+    Left = 24
+    Top = 145
+  end
+  object Customers: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 72
+    Top = 97
+  end
+  object Orders: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 72
+    Top = 145
+  end
+end

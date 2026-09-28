@@ -1,0 +1,203 @@
+object Form5: TForm5
+  Left = 0
+  Top = 0
+  Caption = 'Demo'
+  ClientHeight = 486
+  ClientWidth = 768
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object TMSFNCWXWebRTCCommunication1: TTMSFNCWXWebRTCCommunication
+    Position.X = 180.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 573.000000000000000000
+    Size.Height = 467.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    HTML.Strings = (
+      
+        '<video id={%self%} class="self-top-right" muted autoplay playsin' +
+        'line></video>')
+    CSS.Strings = (
+      '.self-top-right {'
+      '  position: absolute;'
+      '  width: 150px;'
+      '  height: 100px;'
+      '  z-index: 10;'
+      '}'
+      ''
+      '.peer-fullscreen {'
+      '  position: absolute;'
+      '  width: 100%;'
+      '  height: 100%;'
+      '}')
+    DefaultIceServers = <>
+    Peers = <>
+    LocalVideoSettings.EnableAudioTrack = False
+    LocalVideoSettings.EnableVideoTrack = False
+    OnDeviceListInitialized = TMSFNCWXWebRTCCommunication1DeviceListInitialized
+    OnOffer = TMSFNCWXWebRTCCommunication1Offer
+    OnIceCandidate = TMSFNCWXWebRTCCommunication1IceCandidate
+    OnAnswer = TMSFNCWXWebRTCCommunication1Answer
+  end
+  object ComboBox1: TComboBox
+    Enabled = False
+    Position.X = 8.000000000000000000
+    Position.Y = 215.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnChange = ComboBox1Change
+  end
+  object TMSFNCWebsocketClient1: TTMSFNCWebsocketClient
+    Size.Width = 39.000000000000000000
+    Size.Height = 39.000000000000000000
+    Size.PlatformDefault = False
+    Position.X = 123.000000000000000000
+    Position.Y = 168.000000000000000000
+    HostName = 'localhost'
+    Port = 8090
+    AutoCheckInterval = 51
+    OnConnect = TMSFNCWebsocketClient1Connect
+    OnMessageReceived = TMSFNCWebsocketClient1MessageReceived
+  end
+  object Label1: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 52.000000000000000000
+    Size.Width = 75.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Display name'
+    TabOrder = 3
+  end
+  object edtSelf: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Position.X = 91.000000000000000000
+    Position.Y = 50.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Button1: TButton
+    Enabled = False
+    Position.X = 8.000000000000000000
+    Position.Y = 453.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    Text = 'Join peer'
+    OnClick = Button1Click
+  end
+  object Label3: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 190.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Camera'
+    TabOrder = 6
+  end
+  object ComboBox2: TComboBox
+    Enabled = False
+    Position.X = 8.000000000000000000
+    Position.Y = 270.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    OnChange = ComboBox1Change
+  end
+  object Label4: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 245.000000000000000000
+    Size.Width = 70.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Microphone'
+    TabOrder = 8
+  end
+  object Label5: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 80.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Port'
+    TabOrder = 9
+  end
+  object Button2: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 105.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    Text = 'Connect to signaling server'
+    OnClick = Button2Click
+  end
+  object NumberBox1: TNumberBox
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 12
+    Cursor = crIBeam
+    Max = 65535.000000000000000000
+    Value = 8090.000000000000000000
+    Position.X = 58.000000000000000000
+    Position.Y = 78.000000000000000000
+    Size.Width = 114.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label6: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    Text = '1. Connect to the signaling server'
+    TabOrder = 13
+  end
+  object ListBox1: TListBox
+    Position.X = 8.000000000000000000
+    Position.Y = 354.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 91.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 14
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 160.000000000000000000
+    Viewport.Height = 87.000000000000000000
+  end
+  object Label2: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 329.000000000000000000
+    Text = 'Connected peers'
+    TabOrder = 15
+  end
+  object Label7: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 141.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 41.000000000000000000
+    Size.PlatformDefault = False
+    Text = '2. Select camera + microphone'
+    TabOrder = 16
+  end
+  object Label8: TLabel
+    Position.X = 8.000000000000000000
+    Position.Y = 300.000000000000000000
+    Size.Width = 164.000000000000000000
+    Size.Height = 21.000000000000000000
+    Size.PlatformDefault = False
+    Text = '3. Select a peer and connect'
+    TabOrder = 17
+  end
+end

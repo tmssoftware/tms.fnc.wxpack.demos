@@ -1,0 +1,193 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'TMS FNC WX Audio Demo'
+  ClientHeight = 193
+  ClientWidth = 471
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object TMSFNCWXAudioPlayer1: TTMSFNCWXAudioPlayer
+    Align = Top
+    Size.Width = 471.000000000000000000
+    Size.Height = 65.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    URL = 
+      'https://file-examples-com.github.io/uploads/2017/11/file_example' +
+      '_MP3_5MG.mp3'
+    OnPlay = TMSFNCWXAudioPlayer1Play
+    OnPause = TMSFNCWXAudioPlayer1Pause
+    OnTimeUpdate = TMSFNCWXAudioPlayer1TimeUpdate
+    OnMetaDataLoaded = TMSFNCWXAudioPlayer1MetaDataLoaded
+  end
+  object lengthPb: TProgressBar
+    Anchors = [akLeft, akTop, akRight]
+    Orientation = Horizontal
+    Position.X = 8.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 9.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object volTb: TTrackBar
+    Anchors = [akTop, akRight]
+    CanParentFocus = True
+    Max = 1.000000000000000000
+    Orientation = Horizontal
+    Position.X = 292.000000000000000000
+    Position.Y = 138.000000000000000000
+    TabOrder = 5
+    Value = 0.500000000000000000
+    OnTracking = volTbTracking
+  end
+  object playBtn: TButton
+    Position.X = 112.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'Play'
+    OnClick = playBtnClick
+  end
+  object rewBtn: TButton
+    Position.X = 72.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Text = '<<'
+    OnClick = rewBtnClick
+  end
+  object forwBtn: TButton
+    Position.X = 176.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 33.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Text = '>>'
+    OnClick = forwBtnClick
+  end
+  object replayBtn: TButton
+    Position.X = 8.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    Text = 'Replay'
+    OnClick = replayBtnClick
+  end
+  object rateCb: TComboBox
+    Anchors = [akTop, akRight]
+    Items.Strings = (
+      'x0.25'
+      'x0.5'
+      'x0.75'
+      'x1'
+      'x1.25'
+      'x1.5'
+      'x1.75'
+      'x2')
+    ItemIndex = 3
+    Position.X = 408.000000000000000000
+    Position.Y = 160.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 11
+    OnChange = rateCbChange
+  end
+  object urlBtn: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 280.000000000000000000
+    Position.Y = 72.000000000000000000
+    TabOrder = 12
+    Text = 'Load URL'
+    OnClick = urlBtnClick
+  end
+  object fileBtn: TButton
+    Anchors = [akTop, akRight]
+    Position.X = 368.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 96.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 13
+    Text = 'Load local file'
+    OnClick = fileBtnClick
+  end
+  object urlEdt: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    Anchors = [akLeft, akTop, akRight]
+    TabOrder = 14
+    Text = 
+      'https://file-examples-com.github.io/uploads/2017/11/file_example' +
+      '_MP3_5MG.mp3'
+    Position.X = 8.000000000000000000
+    Position.Y = 72.000000000000000000
+    Size.Width = 265.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Label1: TLabel
+    Anchors = [akTop, akRight]
+    Position.X = 326.000000000000000000
+    Position.Y = 164.000000000000000000
+    Size.Width = 73.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Playback rate'
+    TabOrder = 15
+  end
+  object ctrlChk: TCheckBox
+    IsChecked = True
+    Position.X = 8.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 113.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 16
+    Text = 'Show controls'
+    OnChange = ctrlChkChange
+  end
+  object autoChk: TCheckBox
+    Position.X = 128.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 89.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 17
+    Text = 'Autoplay'
+    OnChange = autoChkChange
+  end
+  object loopChk: TCheckBox
+    Position.X = 216.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 18
+    Text = 'Loop'
+    OnChange = loopChkChange
+  end
+  object muteChk: TCheckBox
+    Position.X = 408.000000000000000000
+    Position.Y = 138.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 19.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 20
+    Text = 'Mute'
+    OnChange = muteChkChange
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 296
+    Top = 160
+  end
+end

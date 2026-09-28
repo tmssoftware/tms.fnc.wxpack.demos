@@ -1,0 +1,70 @@
+object Form1: TForm1
+  Left = 388
+  Height = 1122
+  Top = 214
+  Width = 674
+  Caption = 'TMS FNC WX Camera Demo'
+  ClientHeight = 1122
+  ClientWidth = 674
+  DesignTimePPI = 144
+  Position = poScreenCenter
+  LCLVersion = '2.0.8.0'
+  object TMSFNCWXCamera1: TTMSFNCWXCamera
+    Left = 16
+    Height = 520
+    Top = 8
+    Width = 640
+    DoubleBuffered = True
+    TabOrder = 0
+    OnStart = TMSFNCWXCamera1Start
+    OnPause = TMSFNCWXCamera1Pause
+    OnStop = TMSFNCWXCamera1Stop
+    OnSnapshot = TMSFNCWXCamera1Snapshot
+  end
+  object startBtn: TButton
+    Tag = 101
+    Left = 16
+    Height = 38
+    Top = 536
+    Width = 113
+    Caption = 'Start'
+    OnClick = startBtnClick
+    TabOrder = 1
+  end
+  object pauseBtn: TButton
+    Tag = 102
+    Left = 136
+    Height = 38
+    Top = 536
+    Width = 113
+    Caption = 'Pause'
+    Enabled = False
+    TabOrder = 2
+  end
+  object stopBtn: TButton
+    Tag = 103
+    Left = 256
+    Height = 38
+    Top = 536
+    Width = 113
+    Caption = 'Stop'
+    Enabled = False
+    TabOrder = 3
+  end
+  object ssBtn: TButton
+    Tag = 104
+    Left = 376
+    Height = 38
+    Top = 536
+    Width = 280
+    Caption = 'Take snapshot'
+    Enabled = False
+    TabOrder = 4
+  end
+  object Image1: TImage
+    Left = 16
+    Height = 520
+    Top = 584
+    Width = 640
+  end
+end
